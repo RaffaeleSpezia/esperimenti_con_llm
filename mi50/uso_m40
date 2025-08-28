@@ -1,0 +1,21 @@
+chmod +x ~/mini_chat_m40_gemma3.py
+
+# attiva l'env NVIDIA che usavi per la M40
+source ~/clara/bin/activate
+
+export CUDA_VISIBLE_DEVICES=0
+unset HIP_VISIBLE_DEVICES
+
+# generazione deterministica (consigliato per dialogo pulito)
+export DO_SAMPLE=false
+
+# oppure sampling:
+# export DO_SAMPLE=true
+# export TEMPERATURE=0.3
+# export TOP_P=0.95
+# export TOP_K=40
+
+# se il modello è altrove:
+# export MODEL_DIR=/path/to/gemma3-4b-it
+
+~/mini_chat_m40_gemma3.py
