@@ -1,0 +1,14 @@
+chmod +x ~/mini_chat.py
+source ~/venv-rocm311/bin/activate
+export HIP_VISIBLE_DEVICES=0
+unset CUDA_VISIBLE_DEVICES
+
+# deterministico (consigliato per dialogo pulito)
+export DO_SAMPLE=false
+# oppure sampling:
+# export DO_SAMPLE=true
+# export TEMPERATURE=0.3
+# export TOP_P=0.95
+# export TOP_K=40
+
+~/mini_chat.py
